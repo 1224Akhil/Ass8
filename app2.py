@@ -52,7 +52,10 @@ class FileUpload(object):
           <h2 style="color:black ;text-align:center;">Text is Spam </h2>
           </div>
         """
-
+        
+        tfvect = pickle.load(open('file2.pkl','rb'))
+        model = pickle.load(open('file1.pkl','rb'))
+        
         if st.button("Predict"):
              textInput = [textInput]
              textInput = tfvect.transform(textInput)
@@ -76,8 +79,7 @@ class FileUpload(object):
 
         message = data['v2']
         
-        tfvect = pickle.load(open('file2.pkl','rb'))
-        model = pickle.load(open('file1.pkl','rb'))
+ 
 
         preds = []
 
