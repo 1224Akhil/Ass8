@@ -62,7 +62,7 @@ class FileUpload(object):
              output  = model.predict(textInput)
              st.success('The given text is {} with {:0.2f} accuracy'.format(output,score))
 
-             if output == "Not Spam":
+             if output == "ham":
                  st.markdown(notSpam_html,unsafe_allow_html=True)
              else:
                  st.markdown(spam_html,unsafe_allow_html=True)
